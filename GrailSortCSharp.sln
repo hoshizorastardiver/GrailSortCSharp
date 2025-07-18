@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrailSortCSharp", "GrailSortCSharp\GrailSortCSharp.csproj", "{DE693577-BB6E-40BF-B62B-15B48934A3DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE693577-BB6E-40BF-B62B-15B48934A3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE693577-BB6E-40BF-B62B-15B48934A3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE693577-BB6E-40BF-B62B-15B48934A3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE693577-BB6E-40BF-B62B-15B48934A3DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9D0FAC1-2D97-4A0C-BADA-CAC38E85E33E}
+	EndGlobalSection
+EndGlobal
