@@ -70,13 +70,8 @@ public enum SortingBufferType
 
 Uses **no external buffer** (`buffer length = 0`).
 
-* **Pros**
-
   * Minimal memory overhead
   * Ideal for memory-constrained environments
-
-* **Cons**
-
   * Slightly slower
   * Relies on internal tricks (e.g., rotations and key-based swaps)
 
@@ -86,14 +81,8 @@ Uses **no external buffer** (`buffer length = 0`).
 
 Uses a **fixed-size buffer** of 512 elements (`GrailStaticExtBufferLen`).
 
-* **Pros**
-
   * Fixed memory usage
   * No repeated allocations for repeated sorts
-
-* **Cons**
-
-  * May become less performant when the input size exceeds buffer capacity
 
 ---
 
@@ -101,13 +90,8 @@ Uses a **fixed-size buffer** of 512 elements (`GrailStaticExtBufferLen`).
 
 Allocates a buffer of size approximately **√n**, rounded up to the nearest power of 2 (`bufferLen² ≥ length`).
 
-* **Pros**
-
   * Balances speed and memory usage
   * Scales well with various input sizes
-
-* **Cons**
-
   * Allocates a new buffer every sort
   * Still far less memory than algorithms like mergesort (O(√n) vs O(n))
 
