@@ -104,16 +104,12 @@ Uses **no external buffer** (`buffer length = 0`).
   * Slightly slower
   * Relies on internal tricks (e.g., rotations and key-based swaps)
 
----
-
 ### 🔸 `Static`
 
 Uses a **fixed-size buffer** of 512 elements (`GrailStaticExtBufferLen`).
 
   * Fixed memory usage
   * No repeated allocations for repeated sorts
-
----
 
 ### ⚡ `Dynamic`
 
