@@ -2,6 +2,19 @@
 
 [![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.svg)](https://www.nuget.org/packages/GrailSortCSharp)
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hoshizorastardiver/GrailSortCSharp/build-test-mudblazor.yml?branch=dev&logo=github&style=flat-square)
+[![Codecov]( https://img.shields.io/codecov/c/github/hoshizorastardiver/GrailSortCSharp )](https://app.codecov.io/github/hoshizorastardiver/GrailSortCSharp )
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hoshizorastardiver_GrailSortCSharp&metric=alert_status)]( https://sonarcloud.io/summary/overall?id=hoshizorastardiver_GrailSortCSharp)
+[![GitHub]( https://img.shields.io/github/license/hoshizorastardiver/GrailSortCSharp?color=594ae2&logo=github&style=flat-square)]( https://github.com/hoshizorastardiver/GrailSortCSharp/blob/master/LICENSE )
+[![GitHub Repo stars](https://img.shields.io/github/stars/hoshizorastardiver/GrailSortCSharp?color=594ae2&style=flat-square&logo=github)]( https://github.com/hoshizorastardiver/GrailSortCSharp/stargazers )
+[![GitHub last commit](https://img.shields.io/github/last-commit/hoshizorastardiver/GrailSortCSharp?color=594ae2&style=flat-square&logo=github)]( https://github.com/hoshizorastardiver/GrailSortCSharp )
+[![Contributors](https://img.shields.io/github/contributors/hoshizorastardiver/GrailSortCSharp?color=594ae2&style=flat-square&logo=github)]( https://github.com/hoshizorastardiver/GrailSortCSharp/graphs/contributors )
+[![Discussions](https://img.shields.io/github/discussions/hoshizorastardiver/GrailSortCSharp?color=594ae2&logo=github&style=flat-square)]( https://github.com/hoshizorastardiver/GrailSortCSharp/discussions )
+[![Discord](https://img.shields.io/discord/786656789310865418?color=%237289da&label=Discord&logo=discord&logoColor=%237289da&style=flat-square)]( https://discord.gg/GrailSortCSharp )
+[![Twitter](https://img.shields.io/twitter/follow/hoshizorastardiver?color=1DA1F2&label=Twitter&logo=Twitter&style=flat-square)]( https://twitter.com/hoshizorastardiver )
+[![NuGet version](https://img.shields.io/nuget/v/GrailSortCSharp?color=ff4081&label=nuget%20version&logo=nuget&style=flat-square)]( https://www.nuget.org/packages/GrailSortCSharp/ )
+[![NuGet downloads](https://img.shields.io/nuget/dt/GrailSortCSharp?color=ff4081&label=nuget%20downloads&logo=nuget&style=flat-square)]( https://www.nuget.org/packages/GrailSortCSharp/ )
+
 A set of extension methods that integrate the GrailSort algorithm into .NET collections and LINQ, providing high-performance, in-place sorting with flexible buffer strategies. Based on [Summer Dragonfly et al.'s Rewritten Grailsort for Java](https://github.com/HolyGrailSortProject/Rewritten-Grailsort). It has been retested and further optimized specifically for C#.
 
 ## Table of Contents
