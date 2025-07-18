@@ -22,13 +22,13 @@ A set of extension methods that integrate the GrailSort algorithm into .NET coll
 Install via NuGet:
 
 ```shell
-Install-Package GrailSortCSharp.Extensions
+Install-Package GrailSortCSharp
 ```
 
 Or using the .NET CLI:
 
 ```shell
-dotnet add package GrailSortCSharp.Extensions
+dotnet add package GrailSortCSharp
 ```
 
 ## Overview
