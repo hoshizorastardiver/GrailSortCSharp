@@ -20,6 +20,8 @@ A set of extension methods that integrate the GrailSort algorithm into .NET coll
 
 * [Installation](#installation)
 * [Overview](#overview)
+* [What Is GrailSort?](#what-is-grailsort)
+* [Why Choose GrailSort Over C# Built-In Sort?](#why-choose-grailsort-over-c-built-in-sort)
 * [Buffer Types](#buffer-types)
 * [LINQ Extensions](#linq-extensions)
   * [GrailOrderBy](#grailorderby)
@@ -52,6 +54,35 @@ This library provides extension methods for in-place sorting of arrays, lists, a
 * **InPlace**: Performs the sort entirely in-place without extra memory.
 
 The extensions wrap `GrailSort<T>` from `GrailSortCSharp.Algorithm` and expose familiar APIs similar to `Enumerable.OrderBy` and `List<T>.Sort`.
+
+## What Is GrailSort?
+
+GrailSort is a sophisticated variant of Merge Sort that achieves **stability**, **in-place sorting**, and **worst-case O(n log n)** performance. Unlike traditional Merge Sorts that require O(n) extra space, GrailSort cleverly utilizes the array itself to simulate buffer space, using a strategy based on collecting roughly **2 × √n unique elements**.
+
+The algorithm proceeds by:
+
+1. **Collecting Unique Elements**: Attempts to gather 2 × √n unique values at the front of the array. One half acts as a working buffer; the other half serves as keys to guide block merges.
+2. **Buffered Merging**: Uses these elements to perform efficient merges of increasingly large subarrays.
+3. **Block Merge Sort**: When the buffer becomes insufficient, the array is divided into √n-sized blocks, which are reordered using tagged block swaps.
+4. **Fallback Logic**: If there aren't enough unique keys, GrailSort reverts to in-place, rotation-based merge techniques that preserve stability and maintain O(n log n) performance.
+
+This design allows GrailSort to fall back gracefully in degenerate scenarios while remaining fast and space-efficient.
+
+## Why Choose GrailSort Over C# Built-In Sort?
+
+C#'s built-in `Array.Sort` and `List<T>.Sort` methods use **Introspective Sort**, a hybrid of **QuickSort**, **HeapSort**, and **Insertion Sort**. While this is fast on average, it has limitations:
+
+* ❌ **Not Stable**: Equal elements may not preserve their original order.
+* ❌ **Not In-Place in Practice**: Sorting large reference-type arrays or custom comparers may cause temporary allocations.
+* ❌ **Poor Worst-Case Behavior**: Although introspection kicks in to switch to HeapSort when recursion gets deep, it's still vulnerable to crafted worst-case QuickSort inputs.
+
+**GrailSort** addresses these shortcomings:
+
+* ✅ **Stable**: Preserves the order of equal elements — critical for sorting objects with composite keys.
+* ✅ **In-Place**: Fully supports in-place sorting (no heap allocations if `InPlace` buffer mode is selected).
+* ✅ **Worst-Case O(n log n)**: Performs consistently well even on adversarial input.
+* ✅ **Buffer-Configurable**: Lets you tune for memory vs. performance with `InPlace`, `Static`, or `Dynamic` strategies.
+* ✅ **High Customizability**: Works well with custom comparers, key selectors, and LINQ-style usage.
 
 ## Buffer Types
 
