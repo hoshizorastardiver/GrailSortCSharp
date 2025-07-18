@@ -2,7 +2,7 @@
 
 [![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.svg)](https://www.nuget.org/packages/GrailSortCSharp)
 
-A set of extension methods that integrate the GrailSort algorithm into .NET collections and LINQ, providing high-performance, in-place sorting with flexible buffer strategies. Based on Summer Dragonfly et al.'s Rewritten Grailsort for Java in [The Rewritten Grailsort](https://github.com/HolyGrailSortProject/Rewritten-Grailsort), and has been adapted and optimized specifically for C#.
+A set of extension methods that integrate the GrailSort algorithm into .NET collections and LINQ, providing high-performance, in-place sorting with flexible buffer strategies. Based on [Summer Dragonfly et al.'s Rewritten Grailsort for Java](https://github.com/HolyGrailSortProject/Rewritten-Grailsort). It has been retested and further optimized specifically for C#.
 
 ## Table of Contents
 
