@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public sealed class GrailSort<T>
+    public sealed class GrailSort<T> : IGrailSort<T>
     {
         private readonly IComparer<T> _cmp;
 

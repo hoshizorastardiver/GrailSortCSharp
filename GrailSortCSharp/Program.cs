@@ -1,4 +1,6 @@
-﻿namespace GrailSortCSharp
+﻿using GrailSortCSharp.Extensions;
+
+namespace GrailSortCSharp
 {
     internal class Program
     {
@@ -6,9 +8,12 @@
         {
             int[] arr = { 3, 2, 1 };
 
-            var span = arr.AsSpan();
-            span[2] = 4;
-            Console.WriteLine(arr[2]);
+            arr.GrailSort(GrailSortExtensions.SortingBufferType.InPlace);
+
+            foreach (int x in arr)
+            {
+                Console.WriteLine(x);
+            }
         }
     }
 }
