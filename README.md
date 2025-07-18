@@ -192,7 +192,7 @@ void GrailSort<T, TKey>(
 Sorts the `List<T>` in-place, with overloads similar to the array extensions.
 
 ## Examples
-
+It can actually be used as a drop-in replacement for C# LINQ, Array.Sort<T>() and List<T>.Sort()
 ### Sorting an array of primitives
 
 ```csharp
