@@ -55,17 +55,28 @@ namespace GrailSortCSharp.Extensions
             }
         }
 
-        // LINQ Extensions
-
+        #region LINQ Extensions
+        /// <summary>
+        /// Sorts a sequence in ascending order using GrailSort with default comparer and dynamic buffer.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector)
             => source.GrailOrderBy(keySelector, Comparer<TKey>.Default, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a sequence in ascending order using GrailSort with a custom comparer and dynamic buffer.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector, IComparer<TKey> comparer)
             => source.GrailOrderBy(keySelector, comparer, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a sequence in ascending order using GrailSort with default comparer and specified buffer type.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector, SortingBufferType bufferType)
             => source.GrailOrderBy(keySelector, Comparer<TKey>.Default, bufferType);
 
+        /// <summary>
+        /// Sorts a sequence in ascending order using GrailSort with a custom comparer and specified buffer type.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector, IComparer<TKey> comparer, SortingBufferType bufferType)
         {
             var list = source.ToList();
@@ -76,26 +87,48 @@ namespace GrailSortCSharp.Extensions
             return list;
         }
 
+        /// <summary>
+        /// Sorts a sequence in descending order using GrailSort with default comparer and dynamic buffer.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector)
             => source.GrailOrderBy(keySelector, new ReverseComparer<TKey>(Comparer<TKey>.Default), SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a sequence in descending order using GrailSort with custom comparer and dynamic buffer.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector, IComparer<TKey> comparer)
             => source.GrailOrderBy(keySelector, new ReverseComparer<TKey>(comparer), SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a sequence in descending order using GrailSort with default comparer and specified buffer type.
+        /// </summary>
         public static IEnumerable<TSource> GrailOrderByDescending<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource?, TKey?> keySelector, SortingBufferType bufferType)
             => source.GrailOrderBy(keySelector, new ReverseComparer<TKey>(Comparer<TKey>.Default), bufferType);
+        #endregion
 
-        // Array Extensions
 
+        #region Array Extensions
+        /// <summary>
+        /// Sorts an array using GrailSort with default comparer and dynamic buffer.
+        /// </summary>
         public static void GrailSort<T>(this T[] array) where T : IComparable<T>
             => array.GrailSort(Comparer<T>.Default, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts an array using GrailSort with a custom comparer and dynamic buffer.
+        /// </summary>
         public static void GrailSort<T>(this T[] array, IComparer<T> comparer)
             => array.GrailSort(comparer, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts an array using GrailSort with default comparer and specified buffer type.
+        /// </summary>
         public static void GrailSort<T>(this T[] array, SortingBufferType bufferType)
             => array.GrailSort(Comparer<T>.Default, bufferType);
 
+        /// <summary>
+        /// Sorts an array using GrailSort with a custom comparer and specified buffer type.
+        /// </summary>
         public static void GrailSort<T>(this T[] array, IComparer<T> comparer, SortingBufferType bufferType)
         {
             if (array.Length <= 1) return;
@@ -104,15 +137,27 @@ namespace GrailSortCSharp.Extensions
             sorter.SortUsingBufferType(span, array.Length, bufferType);
         }
 
+        /// <summary>
+        /// Sorts an array using GrailSort based on a projection key with default comparer and dynamic buffer.
+        /// </summary>
         public static void GrailSort<T, TKey>(this T[] array, Func<T?, TKey?> keySelector)
             => array.GrailSort(keySelector, Comparer<TKey>.Default, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts an array using GrailSort based on a projection key and custom comparer with dynamic buffer.
+        /// </summary>
         public static void GrailSort<T, TKey>(this T[] array, Func<T?, TKey?> keySelector, IComparer<TKey> comparer)
             => array.GrailSort(keySelector, comparer, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts an array using GrailSort based on a projection key with default comparer and specified buffer type.
+        /// </summary>
         public static void GrailSort<T, TKey>(this T[] array, Func<T?, TKey?> keySelector, SortingBufferType bufferType)
             => array.GrailSort(keySelector, Comparer<TKey>.Default, bufferType);
 
+        /// <summary>
+        /// Sorts an array using GrailSort based on a projection key and custom comparer with specified buffer type.
+        /// </summary>
         public static void GrailSort<T, TKey>(this T[] array, Func<T?, TKey?> keySelector, IComparer<TKey> comparer, SortingBufferType bufferType)
         {
             if (array.Length <= 1) return;
@@ -121,18 +166,30 @@ namespace GrailSortCSharp.Extensions
             var span = array.AsSpan();
             sorter.SortUsingBufferType(span, array.Length, bufferType);
         }
+        #endregion
 
-        // List Extensions
-
+        #region List Extensions
+        /// <summary>
+        /// Sorts a list using GrailSort with default comparer and dynamic buffer.
+        /// </summary>
         public static void GrailSort<T>(this List<T> list)
             => list.GrailSort(Comparer<T>.Default, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a list using GrailSort with a custom comparer and dynamic buffer.
+        /// </summary>
         public static void GrailSort<T>(this List<T> list, IComparer<T> comparer)
             => list.GrailSort(comparer, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a list using GrailSort with default comparer and specified buffer type.
+        /// </summary>
         public static void GrailSort<T>(this List<T> list, SortingBufferType bufferType)
             => list.GrailSort(Comparer<T>.Default, bufferType);
 
+        /// <summary>
+        /// Sorts a list using GrailSort with a custom comparer and specified buffer type.
+        /// </summary>
         public static void GrailSort<T>(this List<T> list, IComparer<T> comparer, SortingBufferType bufferType)
         {
             if (list.Count <= 1) return;
@@ -141,15 +198,27 @@ namespace GrailSortCSharp.Extensions
             sorter.SortUsingBufferType(span, list.Count, bufferType);
         }
 
+        /// <summary>
+        /// Sorts a list using GrailSort based on a projection key with default comparer and dynamic buffer.
+        /// </summary>
         public static void GrailSort<T, TKey>(this List<T> list, Func<T?, TKey?> keySelector)
             => list.GrailSort(keySelector, Comparer<TKey>.Default, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a list using GrailSort based on a projection key and custom comparer with dynamic buffer.
+        /// </summary>
         public static void GrailSort<T, TKey>(this List<T> list, Func<T?, TKey?> keySelector, IComparer<TKey> comparer)
             => list.GrailSort(keySelector, comparer, SortingBufferType.Dynamic);
 
+        /// <summary>
+        /// Sorts a list using GrailSort based on a projection key with default comparer and specified buffer type.
+        /// </summary>
         public static void GrailSort<T, TKey>(this List<T> list, Func<T?, TKey?> keySelector, SortingBufferType bufferType)
             => list.GrailSort(keySelector, Comparer<TKey>.Default, bufferType);
 
+        /// <summary>
+        /// Sorts a list using GrailSort based on a projection key and custom comparer with specified buffer type.
+        /// </summary>
         public static void GrailSort<T, TKey>(this List<T> list, Func<T?, TKey?> keySelector, IComparer<TKey> comparer, SortingBufferType bufferType)
         {
             if (list.Count <= 1) return;
@@ -158,5 +227,6 @@ namespace GrailSortCSharp.Extensions
             var span = CollectionsMarshal.AsSpan(list);
             sorter.SortUsingBufferType(span, list.Count, bufferType);
         }
+        #endregion
     }
 }
