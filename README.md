@@ -1,7 +1,8 @@
-# GrailSortCSharp
+# GrailSort C#: A Stable, In-Place Sorting Algorithm in C#
+
+<img width="384" height="384" alt="0b753261-0e02-428a-9b08-87ccd1857649" src="https://github.com/user-attachments/assets/7275e987-d99b-4100-bfb1-f50d928d7e05" />
 
 [![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.svg)](https://www.nuget.org/packages/GrailSortCSharp)
-
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hoshizorastardiver/GrailSortCSharp/build-test-mudblazor.yml?branch=dev&logo=github&style=flat-square)
 [![Codecov]( https://img.shields.io/codecov/c/github/hoshizorastardiver/GrailSortCSharp )](https://app.codecov.io/github/hoshizorastardiver/GrailSortCSharp )
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hoshizorastardiver_GrailSortCSharp&metric=alert_status)]( https://sonarcloud.io/summary/overall?id=hoshizorastardiver_GrailSortCSharp)
