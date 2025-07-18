@@ -1,6 +1,6 @@
-# GrailSortCSharp.Extensions
+# GrailSortCSharp
 
-[![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.Extensions.svg)](https://www.nuget.org/packages/GrailSortCSharp.Extensions)
+[![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.svg)](https://www.nuget.org/packages/GrailSortCSharp)
 
 A set of extension methods that integrate the GrailSort algorithm into .NET collections and LINQ, providing high-performance, in-place sorting with flexible buffer strategies.
 
@@ -10,7 +10,6 @@ A set of extension methods that integrate the GrailSort algorithm into .NET coll
 * [Overview](#overview)
 * [Buffer Types](#buffer-types)
 * [LINQ Extensions](#linq-extensions)
-
   * [GrailOrderBy](#grailorderby)
   * [GrailOrderByDescending](#grailorderbydescending)
 * [Array Extensions](#array-extensions)
