@@ -1,6 +1,6 @@
 # GrailSort C#: A Stable, In-Place Sorting Algorithm in C#
 
-<p align="center"><img width="512" height="512" alt="0b753261-0e02-428a-9b08-87ccd1857649" src="https://github.com/user-attachments/assets/7275e987-d99b-4100-bfb1-f50d928d7e05" /></p>
+<p align="center"><img width="1024" height="1024" alt="0b753261-0e02-428a-9b08-87ccd1857649" src="https://github.com/user-attachments/assets/7275e987-d99b-4100-bfb1-f50d928d7e05" /></p>
 
 [![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.svg)](https://www.nuget.org/packages/GrailSortCSharp)
 [![NuGet version](https://img.shields.io/nuget/v/GrailSortCSharp?color=ff4081&label=nuget%20version&logo=nuget&style=flat-square)]( https://www.nuget.org/packages/GrailSortCSharp/ )
