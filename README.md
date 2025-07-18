@@ -1,6 +1,6 @@
 # GrailSort C#: A Stable, In-Place Sorting Algorithm in C#
 
-<img width="384" height="384" alt="0b753261-0e02-428a-9b08-87ccd1857649" src="https://github.com/user-attachments/assets/7275e987-d99b-4100-bfb1-f50d928d7e05" />
+<p align="center"><img width="512" height="512" alt="0b753261-0e02-428a-9b08-87ccd1857649" src="https://github.com/user-attachments/assets/7275e987-d99b-4100-bfb1-f50d928d7e05" /></p>
 
 [![NuGet](https://img.shields.io/nuget/v/GrailSortCSharp.svg)](https://www.nuget.org/packages/GrailSortCSharp)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/hoshizorastardiver/GrailSortCSharp/build-test-mudblazor.yml?branch=dev&logo=github&style=flat-square)
@@ -66,10 +66,52 @@ public enum SortingBufferType
 }
 ```
 
-* **Dynamic**: Best for general use; allocates O(n) extra space.
-* **Static**: Uses a fixed-size buffer; good for repeated sorts on similar input sizes.
-* **InPlace**: Minimizes memory usage; slightly slower due to in-place constraint.
+### 🔹 `InPlace`
 
+Uses **no external buffer** (`buffer length = 0`).
+
+* **Pros**
+
+  * Minimal memory overhead
+  * Ideal for memory-constrained environments
+
+* **Cons**
+
+  * Slightly slower
+  * Relies on internal tricks (e.g., rotations and key-based swaps)
+
+---
+
+### 🔸 `Static`
+
+Uses a **fixed-size buffer** of 512 elements (`GrailStaticExtBufferLen`).
+
+* **Pros**
+
+  * Fixed memory usage
+  * No repeated allocations for repeated sorts
+
+* **Cons**
+
+  * May become less performant when the input size exceeds buffer capacity
+
+---
+
+### ⚡ `Dynamic`
+
+Allocates a buffer of size approximately **√n**, rounded up to the nearest power of 2 (`bufferLen² ≥ length`).
+
+* **Pros**
+
+  * Balances speed and memory usage
+  * Scales well with various input sizes
+
+* **Cons**
+
+  * Allocates a new buffer every sort
+  * Still far less memory than algorithms like mergesort (O(√n) vs O(n))
+
+  
 ## LINQ Extensions
 
 ### GrailOrderBy
@@ -102,7 +144,7 @@ IEnumerable<TSource> GrailOrderByDescending<TSource, TKey>(
 
 Same as `GrailOrderBy`, but in descending order.
 
-## Array Extensions
+## Array\<T\> Extensions
 
 ```csharp
 void GrailSort<T>(
@@ -121,7 +163,7 @@ void GrailSort<T, TKey>(
 
 Sorts the array in-place. Overloads allow specifying a custom comparer or key selector.
 
-## List Extensions
+## List\<T\> Extensions
 
 ```csharp
 void GrailSort<T>(
