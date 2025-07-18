@@ -13,7 +13,6 @@
 [![Contributors](https://img.shields.io/github/contributors/hoshizorastardiver/GrailSortCSharp?color=594ae2&style=flat-square&logo=github)]( https://github.com/hoshizorastardiver/GrailSortCSharp/graphs/contributors )
 [![Discussions](https://img.shields.io/github/discussions/hoshizorastardiver/GrailSortCSharp?color=594ae2&logo=github&style=flat-square)]( https://github.com/hoshizorastardiver/GrailSortCSharp/discussions )
 [![Discord](https://img.shields.io/discord/786656789310865418?color=%237289da&label=Discord&logo=discord&logoColor=%237289da&style=flat-square)]( https://discord.gg/GrailSortCSharp )
-[![Twitter](https://img.shields.io/twitter/follow/hoshizorastardiver?color=1DA1F2&label=Twitter&logo=Twitter&style=flat-square)]( https://twitter.com/hoshizorastardiver )
 
 A set of extension methods that integrate the GrailSort algorithm into .NET collections and LINQ, providing high-performance, in-place sorting with flexible buffer strategies. Based on [Summer Dragonfly et al.'s Rewritten Grailsort for Java](https://github.com/HolyGrailSortProject/Rewritten-Grailsort). It has been retested and further optimized specifically for C#.
 
